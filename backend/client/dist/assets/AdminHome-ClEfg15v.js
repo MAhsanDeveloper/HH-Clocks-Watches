@@ -1,0 +1,1 @@
+import{j as e}from"./index-FzgKAEwF.js";const s=()=>e.jsxs("div",{children:[e.jsx("h1",{className:"text-3xl font-bold mb-4 text-black",children:"Welcome Admin"}),e.jsx("p",{className:"text-lg text-black",children:"Use the Admin Dashboard to manage content across the site...."})]});export{s as default};

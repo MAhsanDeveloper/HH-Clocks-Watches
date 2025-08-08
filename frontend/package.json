@@ -6,7 +6,7 @@
 "scripts": {
   "dev": "vite",
   "build": "vite build",
-  "postbuild": "rmdir /S /Q ..\\backend\\client && xcopy dist ..\\backend\\client /E /H /C /I",
+  "postbuild": "rmdir /S /Q ..\\backend\\client\\dist && xcopy dist ..\\backend\\client\\dist /E /H /C /I",
   "lint": "eslint .",
   "preview": "vite preview"
 },

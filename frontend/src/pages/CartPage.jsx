@@ -124,26 +124,24 @@ const CartPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-lg p-6 md:p-10 space-y-8">
-<div className="relative flex items-center">
-  <button
-    onClick={() => navigate(-1)}
-    className="text-sm md:text-base text-gray-600 hover:text-black border border-gray-300 hover:border-black px-3 py-1 rounded transition"
-  >
-    ← Back
-  </button>
-  <h1 className="absolute left-1/2 transform -translate-x-1/2 text-3xl md:text-4xl font-bold text-gray-800">
-    Your Cart
-  </h1>
-</div>
-
-
+        <div className="relative flex items-center">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-sm md:text-base text-gray-600 hover:text-black border border-gray-300 hover:border-black px-3 py-1 rounded transition"
+          >
+            ← Back
+          </button>
+          <h1 className="absolute left-1/2 transform -translate-x-1/2 text-3xl md:text-4xl font-bold text-gray-800">
+            Your Cart
+          </h1>
+        </div>
 
         {/* Cart Items */}
         <div className="space-y-6">
           {cart.map((item) => (
             <div
               key={item._id}
-              className="flex flex-col md:flex-row justify-between items-center border rounded-lg p-4 bg-gray-50 shadow-sm"
+              className="flex flex-col md:flex-row justify-between  items-center border rounded-lg p-4 bg-gray-50 shadow-sm"
             >
               <div className="flex items-center gap-4 w-full md:w-2/3">
                 <img
@@ -194,9 +192,13 @@ const CartPage = () => {
           <span className="text-green-700 text-2xl font-bold">
             Rs {getTotalPrice().toFixed(2)}
           </span>
-          <span className="bg-green-500 mt-2 mx-2 w-fit rounded text-white text-right px-3 py-2 font-semibold z-10">
+          <span className="bg-green-500 flex mt-2 mx-2 w-fit rounded text-white text-right px-3 py-2 font-semibold z-10">
             Free Delivery
           </span>
+        </div>
+        <div>
+          Advance Payment on{" "}
+          <strong className="text-green-500">0306 6462666</strong>
         </div>
 
         {/* Order Summary & Checkout */}

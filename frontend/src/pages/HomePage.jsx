@@ -92,11 +92,7 @@ const HomePage = ({ scrollTo }) => {
                 alt="Watch"
                 className="h-[320px] sm:h-[400px] md:h-[480px] object-cover rounded-xl z-10 shadow-lg"
               />
-              <img
-                src="/hero3.jpg"
-                alt="Watch"
-                className="h-[320px] sm:h-[400px] md:h-[480px] object-cover rounded-xl absolute left-1/2 -translate-x-[30%] opacity-80 blur-[0.5px] shadow-xl"
-              />
+            
             </div>
           </div>
         </div>
