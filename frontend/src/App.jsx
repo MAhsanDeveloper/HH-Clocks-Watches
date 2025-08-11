@@ -9,38 +9,40 @@ import OrderManager from "./admin/OrderManager";
 const AdminHome = lazy(() => import("./admin/AdminHome"));
 const ShopManager = lazy(() => import("./admin/ShopManager"));
 const ContactManager = lazy(() => import("./admin/ContactManager"));
+const adminLoginPath = import.meta.env.VITE_ADMIN_LOGIN_PATH;
+const adminPanelPath = import.meta.env.VITE_ADMIN_PANEL_PATH;
 const AdminLogin = lazy(() => import("./admin/AdminLogin"));
 const AdminLayout = lazy(() => import("./admin/AdminLayout"));
-const ProtectedAdminRoute = lazy(() => import("./components/ProtectedAdminRoute"));
+const ProtectedAdminRoute = lazy(() =>
+  import("./components/ProtectedAdminRoute")
+);
 const CartPage = lazy(() => import("./pages/CartPage"));
 const OrderSuccess = lazy(() => import("./pages/OrderSuccess"));
 const ItemDetails = lazy(() => import("./pages/ItemDetails"));
-
-
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
   },
- {
-  path: "/shop",
-  element: <Home scrollTo="shop" />, // pass prop
-},
- {
-  path: "/contact",
-  element: <Home scrollTo="contact" />, // pass prop
-},
- {
-  path: "/about",
-  element: <Home scrollTo="about" />, // pass prop
-},
+  {
+    path: "/shop",
+    element: <Home scrollTo="shop" />,
+  },
+  {
+    path: "/contact",
+    element: <Home scrollTo="contact" />,
+  },
+  {
+    path: "/about",
+    element: <Home scrollTo="about" />,
+  },
 
-    {
+  {
     path: "/cart",
     element: <CartPage />,
   },
-    {
+  {
     path: "/order-success",
     element: <OrderSuccess />,
   },
@@ -48,12 +50,17 @@ const router = createBrowserRouter([
     path: "/item/:id",
     element: <ItemDetails />,
   },
+
   {
-    path: "/admin-signin-panel",
-    element: <AdminLogin />,
+    path: adminLoginPath,
+    element: (
+      <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
+        <AdminLogin />
+      </Suspense>
+    ),
   },
   {
-    path: "/admin",
+    path: adminPanelPath,
     element: (
       <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
         <ProtectedAdminRoute>
@@ -73,7 +80,6 @@ const router = createBrowserRouter([
     element: <NotFound />,
   },
 ]);
-
 
 const App = () => (
   <>

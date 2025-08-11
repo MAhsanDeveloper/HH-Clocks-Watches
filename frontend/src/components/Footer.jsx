@@ -86,7 +86,7 @@ const Footer = () => {
 
       {/* Bottom Text */}
       <div className="text-center mt-6 text-xs text-gray-400">
-        &copy; {new Date().getFullYear()} Classic Watch. All rights reserved.
+        &copy; {new Date().getFullYear()} HH Clocks & Watches. All rights reserved.
       </div>
     </footer>
   );

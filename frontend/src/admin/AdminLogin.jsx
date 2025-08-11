@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import { FiLoader } from "react-icons/fi";
 
 const baseURL = import.meta.env.VITE_API_BASE_URL;
+const adminPanelPath = import.meta.env.VITE_ADMIN_PANEL_PATH;
 
 const AdminLogin = () => {
   const [mobileNumber, setMobileNumber] = useState("");
@@ -23,7 +24,7 @@ const AdminLogin = () => {
         { withCredentials: true }
       );
 
-  navigate("/admin");
+  navigate(adminPanelPath);
     } catch (err) {
       toast.error("Login failed");
     } finally {

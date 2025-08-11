@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Outlet,  Link, useNavigate } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const AdminLayout = () => {
@@ -21,7 +22,7 @@ const AdminLayout = () => {
   };
 
   return (
-    <div className="flex min-h-screen  bg-amber-600">
+    <div className="flex min-h-screen bg-amber-600">
       {/* Hamburger Button */}
       <button
         className="absolute top-4 left-4 z-50 bg-amber-700 text-white px-3 py-2 rounded md:hidden"
@@ -29,6 +30,7 @@ const AdminLayout = () => {
       >
         ☰
       </button>
+
       {/* Sidebar */}
       <aside
         className={`bg-amber-800 text-white p-6 space-y-4 w-64 md:relative fixed min-h-screen top-0 z-40 transition-transform duration-300 ${
@@ -37,16 +39,16 @@ const AdminLayout = () => {
       >
         <h2 className="text-2xl font-bold mb-6">Admin Panel</h2>
         <nav className="flex flex-col space-y-2">
-          <Link to="/admin" className="hover:underline">
+          <Link to="" className="hover:underline">
             Dashboard
           </Link>
-          <Link to="/admin/shop" className="hover:underline">
+          <Link to="shop" className="hover:underline">
             Manage Shop
           </Link>
-          <Link to="/admin/contact" className="hover:underline">
+          <Link to="contact" className="hover:underline">
             Manage Contact
           </Link>
-          <Link to="/admin/orders" className="hover:underline">
+          <Link to="orders" className="hover:underline">
             Manage Orders
           </Link>
         </nav>
